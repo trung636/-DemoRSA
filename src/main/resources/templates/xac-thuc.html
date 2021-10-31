@@ -1,0 +1,39 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Xac Thuc</title>
+</head>
+<body>
+
+	<form th:object="${hopDong}" method="POST"
+         th:action="@{/xac-thuc}" enctype="multipart/form-data">
+         File to upload: <input name="fileData" type="file"/>
+         <br /> 
+         <input type= "number" th:value="${session.prikey}" name ="key"><br>
+         <label>Nhap E De XN</label><br>
+         <input type="number" name ="e"><br>
+         <label>Nhap N De XN</label><br>
+         <input type= "number" name = "n"><br>
+         
+         <input type="submit" value="Xác Thực">
+    </form>
+    
+    <th:block>
+		<th:block th:if="${fail}!=null">
+			<script type="text/javascript">
+				alert("Chữ Kí Đã Bị Thay Đổi!!");
+			</script>
+		</th:block>
+		<th:block th:if="${success}!=null">
+			<script type="text/javascript">
+				alert("Chính Xác!!");
+			</script>
+		</th:block>
+		<th:block th:if="${kyhdFail}!=null">
+			<script type="text/javascript">
+				alert("Vui Lòng Tạo Khóa Trước!!!");
+			</script>
+		</th:block>
+	</th:block>
+</body>
+</html>

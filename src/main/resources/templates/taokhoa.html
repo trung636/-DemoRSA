@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Advanced Contact Form with File Uploader">
+	<meta name="author" content="UWS">
+	<title>Sendy | Advanced Contact Form</title>
+
+	<!-- Favicon -->
+	<link href="img/favicon.png" rel="shortcut icon">
+
+	<!-- Google Fonts - Poppins -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+	<!-- Font Awesome CSS -->
+	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+
+	<!-- Custom Font Icons -->
+	<link href="vendor/icomoon/css/iconfont.min.css" rel="stylesheet">
+
+	<!-- Vendor CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/dmenu/css/menu.css" rel="stylesheet">
+	<link href="vendor/hamburgers/css/hamburgers.min.css" rel="stylesheet">
+	<link href="vendor/mmenu/css/mmenu.min.css" rel="stylesheet">
+	<link href="vendor/filepond/css/filepond.css" rel="stylesheet">
+
+	<!-- Main CSS -->
+	<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div>
+	<!-- Preloader End -->
+
+	<!-- Page -->
+	<div id="page">
+		<!-- Header -->
+			<div th:insert="header"></div>		
+		<!-- Header End -->
+
+		<!-- Sub Header -->
+		<div class="sub-header">
+			<div class="container">
+				<h1>Tạo khóa</h1>
+			</div>
+		</div>
+		<!-- Sub Header End -->
+
+		<!-- Main -->
+		<main>
+			<!-- Contact  -->
+			<div class="contact">
+				<div class="container">
+					<!-- Form -->
+					<form method="POST" id="contactForm" th:action="@{/taokhoa}">
+						<div class="row">
+							<div class="col-lg-8" id="mainContent">
+								<!-- Số P và Q -->
+								<div class="row box first">
+									<div class="box-header">
+										<h3><strong>1</strong>Chọn số nguyên tố</h3>
+										<p>Bấm vào nút "Tạo số nguyên tố" để tạo hai số nguyên tố p và q ngẫu nhiên</p>
+									</div>
+									<div class="col-md-12 col-sm-12">
+										<div class="form-group">
+											<input id="soP" class="form-control" name="p" th:value="${session.p}" placeholder="Số nguyên tố p" type="text" data-parsley-pattern="^[a-zA-Z\s.]+$" required />
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12">
+										<div class="form-group">
+											<input id="soQ" class="form-control" name="q" th:value="${session.q}" placeholder="Số nguyên tố q" type="text" data-parsley-pattern="^[a-zA-Z\s.]+$" required />
+										</div>
+									</div>
+									<a th:href="@{/taokhoa}" class="btn-form-func">
+										<span class="btn-form-func-content">Tạo số nguyên tố</span>
+										<span class="icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+									</a>
+								</div>
+								<!-- Tính các số -->
+								<div class="row box">
+									<div class="box-header">
+										<h3><strong>2</strong>Tính các giá trị</h3>
+										<p>Nhấn vào nút "Tính" để tính các giá trị</p>
+									</div>
+									<div class="col-md-12 col-sm-12">
+										<p>Khóa Công Khai</p>
+										<div class="form-group">
+											So E<input id="soE" class="form-control" name="e" th:value="${session.e}" placeholder="Số E" type="text" data-parsley-pattern="^[a-zA-Z\s.]+$" required />
+										</div>
+										<div class="form-group">
+											So N<input id="soN" class="form-control" name="n" th:value="${session.n}" placeholder="Số N" type="text" data-parsley-pattern="^[a-zA-Z\s.]+$" required />
+										</div>
+										<p>Khóa Bí Mật</p>
+										<div class="form-group">
+											So D<input id="soD" class="form-control" name="d" th:value="${session.d}" placeholder="Số D"  type="text" data-parsley-pattern="^[a-zA-Z\s.]+$" required />
+										</div>
+										<div class="form-group">
+											So N<input id="soN" class="form-control" name="n" th:value="${session.n}" placeholder="Số N" type="text" data-parsley-pattern="^[a-zA-Z\s.]+$" required />
+										</div>
+									</div>
+									<a th:href="@{/tinh}" class="btn-form-func">
+										<span class="btn-form-func-content">Tinh</span>
+										<span class="icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</form>
+					<!-- Form End -->
+				</div>
+			</div>
+			<!-- Contact End -->
+		</main>
+		<!-- Main End -->
+	</div>
+	<!-- Page End -->
+
+	<!-- Back to top button -->
+	<div id="toTop"><i class="fa fa-chevron-up"></i></div>
+
+	<!-- Vendor Javascript Files -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/easing/js/easing.min.js"></script>
+	<script src="vendor/parsley/js/parsley.min.js"></script>
+	<script src="vendor/nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="vendor/theia-sticky-sidebar/js/ResizeSensor.min.js"></script>
+	<script src="vendor/theia-sticky-sidebar/js/theia-sticky-sidebar.min.js"></script>
+	<script src="vendor/mmenu/js/mmenu.min.js"></script>
+	<script src="vendor/filepond/js/filepond-plugin-file-validate-size.js"></script>
+	<script src="vendor/filepond/js/filepond-plugin-file-validate-type.js"></script>
+	<script src="vendor/filepond/js/filepond.min.js"></script>
+
+	<!-- Main Javascript File -->
+	<script src="js/scripts.js"></script>
+	<th:block>
+		<th:block th:if="${CreateSNT}!=null">
+			<script type="text/javascript">
+				alert("Tạo Số Nguyên Tố Thành Công!!");
+			</script>
+		</th:block>
+		<th:block th:if="${tinhSuccess}!=null">
+			<script type="text/javascript">
+				alert("Tính Thành Công!!");
+			</script>
+		</th:block>
+		<th:block th:if="${kyhdFail}!=null">
+			<script type="text/javascript">
+				alert("Vui Lòng Tạo Khóa Trước!!!");
+			</script>
+		</th:block>
+	</th:block>
+
+</body>
+
+</html>

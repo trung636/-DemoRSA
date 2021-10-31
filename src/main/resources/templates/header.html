@@ -1,0 +1,43 @@
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<header class="main-header sticky">
+			<a href="#menu" class="btn-mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-6">
+						<div id="logo">
+							<h1><a href="https://ultimatewebsolutions.net/sendy/intro/" title="Sendy">Sendy</a></h1>
+						</div>
+					</div>
+					<div class="col-lg-9 col-6">
+						<!-- Menu -->
+						<nav id="menu" class="main-menu">
+							<ul>
+								<li>
+									<span><a href="#">Chọn hành động <i class="fa fa-chevron-down"></i></a></span>
+									<ul>
+										<li><a th:href="@{/home1}">Tạo khóa</a></li>
+										<li><a th:href="@{/ky-hd1}">Ký hợp đồng</a></li>
+										<li><a th:href="@{/xac-thuc}">Xác thực chữ ký</a></li>
+										<li><a th:href="@{/reset}">Reset</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+						<!-- Menu End -->
+					</div>
+				</div>
+			</div>
+		</header>
+</body>
+</html>

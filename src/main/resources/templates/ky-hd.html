@@ -1,0 +1,20 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>ky hop dong</title>
+</head>
+<body>
+ 	<form th:object="${hopDong}" method="POST"
+         th:action="@{/ky}" enctype="multipart/form-data">
+         File to upload: <input name="fileData" type="file"/>
+         <br />  
+         <input type="submit" value="Tạo Chữ Ký">
+    </form>
+    
+    <th:block th:if= "${session.prikey !=null }">
+    	<p th:utext= "${session.bamFile}">
+    	<p th:utext= "${session.prikey}">
+    </th:block>
+
+</body>
+</html>
